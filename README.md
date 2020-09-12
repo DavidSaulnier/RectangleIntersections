@@ -1,6 +1,6 @@
 # Rectangle Intersections
 
-This program calculates and display all intersections given in the input file
+This console application calculates and displays all intersections between rectangles given in the input file
 
 ## Getting Started
 
@@ -8,80 +8,62 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need .Net Core
+You need:
+- .Net Core 3.1 installed to run the program
+- NUnit installed to run the unit tests
 
-```
-Give examples
-```
+### Build
 
-### Installing
+Start by opening the command prompt and navigate to the folder where the solution is.
+To build the solution, execute the following command:
 
-A step by step series of examples that tell you how to get a development env running
+`dotnet build`
 
-Say what the step will be
+### Run unit tests
 
-```
-Give the example
-```
+Open the command prompt and navigate to the folder where the solution is.
+Make sure you built the solution first then execute the following command:
 
-And repeat
+`dotnet test`
 
-```
-until finished
-```
 
-End with an example of getting some data out of the system or using it for a little demo
+### Run the console application
 
-## Running the tests
+There are two ways to run the application:
 
-Explain how to run the automated tests for this system
+#### 1: from the solution folder
 
-### Break down into end to end tests
+Open the command prompt and navigate to the folder where the solution is.
+Make sure you built the solution first then execute the following command:
 
-Explain what these tests test and why
+`dotnet run --project RectangleIntersections ./TestFiles/RectangleInput.json`
 
-```
-Give an example
-```
+#### 2: from the project folder
+Open the command prompt and navigate to the folder where the RectangleIntersections project is.
+Make sure you built the solution first then execute the following command:
 
-### And coding style tests
+`dotnet run ./TestFiles/RectangleInput.json`
 
-Explain what these tests test and why
+#### Arguments
 
-```
-Give an example
-```
+There is only 1 argument needed:
+- filename (**mandatory**)
 
-## Deployment
+Replace the `./TestFiles/RectangleInput.json` with the file you want to give as input.
+3 test files are provided in the `TestFiles` folder:
+- RectangleInput.json
+- RectangleInput2.json
+- RectangleInput3.json
 
-Add additional notes about how to deploy this on a live system
+These files are there to help running the application quickly, they are not meant to check the validity of the program
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+## Author
 
-## Contributing
+David Saulnier
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
