@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RectangleIntersections": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\david\\source\\repos\\RectangleIntersections\\RectangleInput3.json"
+    }
+  }
+}
