@@ -90,7 +90,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void CalculateIntersections4RectangleNoAreaIntersectionTest()
+        public void CalculateIntersections4RectanglesNoAreaIntersectionTest()
         {
             var rectangles = new List<Rectangle>()
             {
