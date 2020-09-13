@@ -41,7 +41,7 @@ Make sure you built the solution first then execute the following command:
 Open the command prompt and navigate to the folder where the RectangleIntersections project is.
 Make sure you built the solution first then execute the following command:
 
-`dotnet run ./TestFiles/RectangleInput.json`
+`dotnet run ../TestFiles/RectangleInput.json`
 
 #### Arguments
 

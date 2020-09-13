@@ -12,7 +12,7 @@ namespace RectangleIntersectionTest
     public class RectangleListBuilderTest
     {
         [Test]
-        public void BuildRectangles_Valid_5_Rectangles()
+        public void BuildRectanglesValid5RectanglesTest()
         {
             var inputRectangles = new InputRectangles()
             {
@@ -52,7 +52,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void BuildRectangles_Valid_11_Rectangle()
+        public void BuildRectanglesValid11RectangleTest()
         {
             var inputRectangles = new InputRectangles()
             {
@@ -128,7 +128,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void BuildRectangles_Valid_0_Rectangles()
+        public void BuildRectanglesValid0RectanglesTest()
         {
             var inputRectangles = new InputRectangles()
             {
@@ -142,7 +142,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void BuildRectangles_Invalid_1_Rectangles_Negative_Width()
+        public void BuildRectanglesInvalid1RectanglesNegativeWidthTest()
         {
             var inputRectangles = new InputRectangles()
             {
@@ -155,7 +155,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void BuildRectangles_Invalid_1_Rectangles_Negative_Height()
+        public void BuildRectanglesInvalid1RectanglesNegativeHeightTest()
         {
             var inputRectangles = new InputRectangles()
             {
@@ -168,7 +168,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void BuildRectangles_Invalid_1_Rectangles_Negative_Width_And_Height()
+        public void BuildRectanglesInvalid1RectanglesNegativeWidthAndHeight()
         {
             var inputRectangles = new InputRectangles()
             {

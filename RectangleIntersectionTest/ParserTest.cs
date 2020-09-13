@@ -26,7 +26,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void ValidJsonNorectangle()
+        public void ValidJsonNorectangleTest()
         {
             var rectangles = Parser.ParseJson(_validJsonNoRectangle);
             Assert.IsNotNull(rectangles);
@@ -34,19 +34,19 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void ValidJson_InvalidRectangles()
+        public void ValidJsonInvalidRectanglesTest()
         {
             Assert.Throws<FormatException>(() => Parser.ParseJson(_validJsonInvalidRectangles));
         }
 
         [Test]
-        public void ValidJson_SomeValidSomeInvalidRectangles()
+        public void ValidJsonSomeValidSomeInvalidRectanglesTest()
         {
             Assert.Throws<FormatException>(() => Parser.ParseJson(_validJsonSomeValidSomeInvalidRectangles));
         }
 
         [Test]
-        public void ValidJson_ValidRectangle()
+        public void ValidJsonValidRectangleTest()
         {
             var rectangles = Parser.ParseJson(_validJsonValidRectangle);
             Assert.IsNotNull(rectangles);
@@ -61,7 +61,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void ValidJson_ValidRectangles()
+        public void ValidJsonValidRectanglesTest()
         {
             var rectangles = Parser.ParseJson(_validJsonValidRectangles);
             Assert.IsNotNull(rectangles);
@@ -81,7 +81,7 @@ namespace RectangleIntersectionTest
 
         //valid rectangle for parsing. Will be handled during validation
         [Test]
-        public void ValidJson_RectangleWithNegativeLength()
+        public void ValidJsonRectangleWithNegativeLengthTest()
         {
             var rectangles = Parser.ParseJson(_validJsonRectangleWithNegativeLength);
             Assert.IsNotNull(rectangles);

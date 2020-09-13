@@ -45,7 +45,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void CalculateIntersections_0_Rectangle()
+        public void CalculateIntersections0RectangleTest()
         {
             var rectangles = new List<Rectangle>();
 
@@ -57,7 +57,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void CalculateIntersections_1_Rectangle()
+        public void CalculateIntersections1RectangleTest()
         {
             var rectangles = new List<Rectangle>()
             {
@@ -72,7 +72,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void CalculateIntersections_4_Rectangle_No_Intersection()
+        public void CalculateIntersections4RectangleNoIntersectionTest()
         {
             var rectangles = new List<Rectangle>()
             {
@@ -90,7 +90,25 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void CalculateIntersections_4_Rectangles()
+        public void CalculateIntersections4RectangleNoAreaIntersectionTest()
+        {
+            var rectangles = new List<Rectangle>()
+            {
+                new Rectangle() { X = 10, Y = 10, Width = 10, Height = 10 },
+                new Rectangle() { X = 20, Y = 10, Width = 10, Height = 10 },
+                new Rectangle() { X = 30, Y = 10, Width = 10, Height = 10 },
+                new Rectangle() { X = 40, Y = 10, Width = 10, Height = 10 },
+            };
+
+            var expectedResult = new List<RectangleIntersection>();
+            var result = IntersectionCalculator.CalculateIntersections(rectangles);
+
+            Assert.AreEqual(expectedResult, result);
+
+        }
+
+        [Test]
+        public void CalculateIntersections4RectanglesTest()
         {
             var rectangles = new List<Rectangle>()
             {
@@ -150,7 +168,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void CalculateIntersections_4_Equal_Rectangles()
+        public void CalculateIntersections4EqualRectanglesTest()
         {
             var rectangles = new List<Rectangle>()
             {
@@ -204,11 +222,6 @@ namespace RectangleIntersectionTest
                 },
                 new RectangleIntersection()
                 {
-                    RectangleIndexes = new List<int>(){1,2,3},
-                    Intersection = new Rectangle() { X = 100, Y = 100, Width = 250, Height = 80 }
-                },
-                new RectangleIntersection()
-                {
                     RectangleIndexes = new List<int>(){1,3,4},
                     Intersection = new Rectangle() { X = 100, Y = 100, Width = 250, Height = 80 }
                 },
@@ -231,6 +244,38 @@ namespace RectangleIntersectionTest
             for (int i = 0; i < expectedResult.Count; i++)
             {
                 Assert.AreEqual(IsEqual(expectedResult[i], result[i]), true);
+            }
+        }
+
+        [Test]
+        public void CalculateIntersections10EqualRectanglesTest()
+        {
+            var rectangles = new List<Rectangle>()
+            {
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 },
+                new Rectangle() { X = 100, Y = 101, Width = 250, Height = 80 }
+            };
+
+            var expectedCount = 1013; 
+
+            var result = IntersectionCalculator.CalculateIntersections(rectangles);
+
+            Assert.AreEqual(result.Count, expectedCount);
+
+            for (int i = 0; i < expectedCount; i++)
+            {
+                Assert.AreEqual(result[i].Intersection.X, 100);
+                Assert.AreEqual(result[i].Intersection.Y, 101);
+                Assert.AreEqual(result[i].Intersection.Width, 250);
+                Assert.AreEqual(result[i].Intersection.Height, 80);
             }
         }
     }

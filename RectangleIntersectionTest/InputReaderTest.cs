@@ -7,7 +7,7 @@ namespace RectangleIntersectionTest
     /// <summary>
     /// Class testing the InputFileReader class
     /// </summary>
-    public class InputFileReaderTest
+    public class InputReaderTest
     {
         [Test]
         public void FileNotFoundTest()
@@ -19,6 +19,20 @@ namespace RectangleIntersectionTest
         public void NullFileTest()
         {
             Assert.Throws<FileNotFoundException>(() => InputReader.ReadFile(null));
+        }
+
+        [Test]
+        public void ValidFileTest()
+        {
+            var filename = "test.txt";
+            var text = "test content";
+            File.WriteAllText(filename, text);
+
+            var content = InputReader.ReadFile(filename);
+
+            Assert.AreEqual(content, text);
+
+            File.Delete(filename);
         }
     }
 }

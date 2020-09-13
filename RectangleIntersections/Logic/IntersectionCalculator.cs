@@ -23,11 +23,14 @@ namespace RectangleIntersections.Logic
                 return intersections;
             }
 
-            // Find 1st degree intersections.
+            // process rectangles in order, the indexes represent the order in which they appear in the file
             for (var i = 0; i < rectangles.Count - 1; i++)
             {
+                var indexCurrentRectangle = i + 1;
+                // find 1st degree intersections.
                 for (var j = i + 1; j < rectangles.Count; j++)
                 {
+                    var indexIntersectingRectangle = j + 1;
                     if (rectangles[i].IntersectsWith(rectangles[j]))
                     {
                         var intersectingRectangle = Rectangle.Intersect(rectangles[i], rectangles[j]);
@@ -36,26 +39,35 @@ namespace RectangleIntersections.Logic
                         {
                             intersections.Add(new RectangleIntersection()
                             {
-                                RectangleIndexes = new List<int>() { i + 1, j + 1 },
+                                RectangleIndexes = new List<int>() { indexCurrentRectangle, indexIntersectingRectangle },
                                 Intersection = intersectingRectangle
                             });
                         }
                     }
                 }
 
-
                 // find intersections with already intersected rectangles
-                var intersectionsCopy = intersections.Select(x => x).ToList();
-                for (var k = 0; k < intersectionsCopy.Count; k++)
+                for (var k = 0; k < intersections.Count; k++)
                 {
-                    if (rectangles[i].IntersectsWith(intersectionsCopy[k].Intersection))
+                    // if the intersection already includes this rectangle, skip it 
+                    if (intersections[k].RectangleIndexes.Contains(indexCurrentRectangle))
                     {
-                        var rectanglesIndexes = intersectionsCopy[k].RectangleIndexes.Select(x => x).ToList();
-                        var intersectingRectangle = Rectangle.Intersect(rectangles[i], intersectionsCopy[k].Intersection);
+                        continue;
+                    }
+                    // we process rectangles in order so we don't need to check intersections with rectangles at a lower "index"
+                    if (intersections[k].RectangleIndexes.Max() < indexCurrentRectangle)
+                    {
+                        continue;
+                    }
+                    if (rectangles[i].IntersectsWith(intersections[k].Intersection))
+                    {
+                        var rectanglesIndexes = intersections[k].RectangleIndexes.Select(x => x).ToList();
+                        rectanglesIndexes.Add(indexCurrentRectangle);
+                        var intersectingRectangle = Rectangle.Intersect(rectangles[i], intersections[k].Intersection);
 
-                        if (!rectanglesIndexes.Contains(i + 1) && intersectingRectangle.Width != 0 && intersectingRectangle.Height != 0)
+                        // only insert intersecting rectangles with an area
+                        if (intersectingRectangle.Width != 0 && intersectingRectangle.Height != 0)
                         {
-                            rectanglesIndexes.Add(i + 1);
                             intersections.Add(new RectangleIntersection()
                             {
                                 RectangleIndexes = rectanglesIndexes,
@@ -68,7 +80,5 @@ namespace RectangleIntersections.Logic
 
             return intersections;
         }
-
-      
     }
 }

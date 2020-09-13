@@ -12,7 +12,7 @@ namespace RectangleIntersectionTest
     {
         
         [Test]
-        public void RectangleWithNegativeWidth()
+        public void RectangleWithNegativeWidthTest()
         {
             InputRectangle rectangle = new InputRectangle()
             {
@@ -25,7 +25,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void RectangleWithNegativeHeight()
+        public void RectangleWithNegativeHeightTest()
         {
             InputRectangle rectangle = new InputRectangle()
             {
@@ -38,7 +38,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void RectangleWithNegativeWidthAndNegativeHeight()
+        public void RectangleWithNegativeWidthAndNegativeHeightTest()
         {
             InputRectangle rectangle = new InputRectangle()
             {
@@ -51,7 +51,7 @@ namespace RectangleIntersectionTest
         }
 
         [Test]
-        public void Valid()
+        public void ValidRectangleTest()
         {
             InputRectangle rectangle = new InputRectangle()
             {
