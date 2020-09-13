@@ -1,13 +1,22 @@
 using NUnit.Framework;
-using RectangleIntersections;
+using RectangleIntersections.Data;
+using RectangleIntersections.Logic;
 using System.Collections.Generic;
 using System.Drawing;
 
 namespace RectangleIntersectionTest
 {
+    /// <summary>
+    /// Class testing the IntersectionCalculator class
+    /// </summary>
     public class IntersectionCalculatorTest
     {
-
+        /// <summary>
+        /// Helper method to compare intersecting rectangles to check if they are the same
+        /// </summary>
+        /// <param name="interesection1">First intersecting rectangle to compare</param>
+        /// <param name="interesection2">Second intersecting rectangle to compare</param>
+        /// <returns></returns>
         private bool IsEqual(RectangleIntersection interesection1, RectangleIntersection interesection2)
         {
             if (interesection1.RectangleIndexes.Count != interesection2.RectangleIndexes.Count)

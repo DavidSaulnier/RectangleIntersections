@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using RectangleIntersections.Logic;
+using System;
 using System.Linq;
 
 namespace RectangleIntersections
@@ -15,9 +15,9 @@ namespace RectangleIntersections
                     throw new ArgumentException("Error: no file provided");
                 }
 
-                var fileContent = InputFileReader.ReadFile(args[0]);
+                var content = InputReader.ReadFile(args[0]);
 
-                var jsonRectangles = Parser.ParseJson(fileContent);
+                var jsonRectangles = Parser.ParseJson(content);
 
                 var rectangles = RectangleListBuilder.BuildRectangles(jsonRectangles);
 

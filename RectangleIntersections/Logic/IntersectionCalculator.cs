@@ -1,27 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using RectangleIntersections.Data;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace RectangleIntersections
+namespace RectangleIntersections.Logic
 {
+    /// <summary>
+    /// Class taking care of calculating the intersecting rectangles
+    /// </summary>
     public static class IntersectionCalculator
     {
-        public static List<RectangleIntersection> CalculateIntersections(List<Rectangle> inputRectangles)
+        /// <summary>
+        /// Method taking care of calculating the intersecting rectangles
+        /// </summary>
+        /// <param name="rectangles">List of System.Drawing.Rectangle object representing the rectangles we have to process</param>
+        /// <returns>A list of RectangleIntersection objects representing each an intersection between two rectangles</returns>
+        public static List<RectangleIntersection> CalculateIntersections(List<Rectangle> rectangles)
         {
             var intersections = new List<RectangleIntersection>();
-            if (!inputRectangles.Any())
+            if (!rectangles.Any())
             {
                 return intersections;
             }
 
             // Find 1st degree intersections.
-            for (var i = 0; i < inputRectangles.Count - 1; i++)
+            for (var i = 0; i < rectangles.Count - 1; i++)
             {
-                for (var j = i + 1; j < inputRectangles.Count; j++)
+                for (var j = i + 1; j < rectangles.Count; j++)
                 {
-                    if (inputRectangles[i].IntersectsWith(inputRectangles[j]))
+                    if (rectangles[i].IntersectsWith(rectangles[j]))
                     {
-                        var intersectingRectangle = Rectangle.Intersect(inputRectangles[i], inputRectangles[j]);
+                        var intersectingRectangle = Rectangle.Intersect(rectangles[i], rectangles[j]);
 
                         if (intersectingRectangle.Width != 0 && intersectingRectangle.Height != 0)
                         {
@@ -39,10 +48,10 @@ namespace RectangleIntersections
                 var intersectionsCopy = intersections.Select(x => x).ToList();
                 for (var k = 0; k < intersectionsCopy.Count; k++)
                 {
-                    if (inputRectangles[i].IntersectsWith(intersectionsCopy[k].Intersection))
+                    if (rectangles[i].IntersectsWith(intersectionsCopy[k].Intersection))
                     {
                         var rectanglesIndexes = intersectionsCopy[k].RectangleIndexes.Select(x => x).ToList();
-                        var intersectingRectangle = Rectangle.Intersect(inputRectangles[i], intersectionsCopy[k].Intersection);
+                        var intersectingRectangle = Rectangle.Intersect(rectangles[i], intersectionsCopy[k].Intersection);
 
                         if (!rectanglesIndexes.Contains(i + 1) && intersectingRectangle.Width != 0 && intersectingRectangle.Height != 0)
                         {

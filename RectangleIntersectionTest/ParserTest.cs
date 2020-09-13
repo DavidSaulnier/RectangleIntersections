@@ -1,10 +1,13 @@
 using NUnit.Framework;
-using RectangleIntersections;
+using RectangleIntersections.Logic;
 using System;
 using System.Linq;
 
 namespace RectangleIntersectionTest
 {
+    /// <summary>
+    /// Class testing the Parser class
+    /// </summary>
     public class ParserTest
     {
         //used for test, if you change the values here, check the corresponding Unit Test.

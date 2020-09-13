@@ -1,12 +1,18 @@
-﻿using System;
+﻿using RectangleIntersections.Data;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace RectangleIntersections
+namespace RectangleIntersections.Logic
 {
     public static class ResultWriter
     {
+        /// <summary>
+        /// Class taking care of displaying the results of the program.
+        /// </summary>
+        /// <param name="rectangles">The list of Rectangles used as input</param>
+        /// <param name="intersectingRectangles">The list of intersecting rectangles</param>
         public static void Display(List<Rectangle> rectangles, List<RectangleIntersection> intersectingRectangles)
         {
             Console.WriteLine("Input:");
@@ -37,8 +43,6 @@ namespace RectangleIntersections
                     {
                         indexes += ",";
                     }
-
-
                 }
 
                 Console.WriteLine($"{counter++}: Between rectangle{indexes} at ({intersectingRectangle.Intersection.X},{intersectingRectangle.Intersection.Y}), delta_x={intersectingRectangle.Intersection.Width}, delta_y={intersectingRectangle.Intersection.Height}.");

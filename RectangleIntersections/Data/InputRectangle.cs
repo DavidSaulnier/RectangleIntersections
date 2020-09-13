@@ -1,15 +1,12 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 
-namespace RectangleIntersections
+namespace RectangleIntersections.Data
 {
-    public class JsonRectangles
-    {
-        [JsonProperty("rects", Required = Required.Always)]
-        public List<JsonRectangle> Rectangles { get; set; }
-    }
 
-    public class JsonRectangle
+    /// <summary>
+    /// Class representing a rectangle given as input
+    /// </summary>
+    public class InputRectangle
     {
         [JsonProperty("x", Required = Required.Always)]
         public int X { get; set; }

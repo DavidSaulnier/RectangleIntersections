@@ -1,6 +1,6 @@
 # Rectangle Intersections
 
-This console application calculates and displays all intersections between rectangles given in the input file
+This console application takes a list of rectangles as input and calculates and displays all intersectiong rectangles between them.
 
 ## Getting Started
 
@@ -8,13 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need:
-- .Net Core 3.1 installed to run the program
-- NUnit installed to run the unit tests
+You need .Net Core 3.1 installed
+You can download it [here](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 ### Build
 
-Start by opening the command prompt and navigate to the folder where the solution is.
+Open the command prompt and navigate to the folder where the solution is.
 To build the solution, execute the following command:
 
 `dotnet build`
@@ -65,5 +64,9 @@ David Saulnier
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This is free and unencumbered software released into the public domain.
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\ ERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+For more information, please refer to <https://unlicense.org>
 
