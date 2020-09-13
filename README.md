@@ -1,10 +1,10 @@
 # Rectangle Intersections
 
-This console application takes a list of rectangles as input and calculates and displays all intersectiong rectangles between them.
+This console application takes a list of rectangles as input and calculates and displays all intersecting rectangles between them.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you information on how to build, run tests and run the application on your machine
 
 ### Prerequisites
 
@@ -24,7 +24,6 @@ Open the command prompt and navigate to the folder where the solution is.
 Make sure you built the solution first then execute the following command:
 
 `dotnet test`
-
 
 ### Run the console application
 
